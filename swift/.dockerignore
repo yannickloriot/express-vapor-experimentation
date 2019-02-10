@@ -1,0 +1,6 @@
+.git
+.build
+.gitignore
+DerivedData
+Package.resolved
+*.xcodeproj

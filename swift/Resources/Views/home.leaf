@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Example App</title>
+</head>
+<body>
+    <h1>Item list</h1>
+    <ul>
+        #for(item in items) {
+            <li>
+                #(item) - <a href="/delete/#(item)">Delete</a>
+            </li>
+        }
+    </ul>
+    <div>
+        <form method="POST">
+            <label for="title">Title: </label>
+            <input type="text" name="title" id="title" required>
+
+            <input type="submit" value="Add">
+        </form>
+    </div>
+</body>
+</html>

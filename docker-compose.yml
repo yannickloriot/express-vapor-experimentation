@@ -1,0 +1,26 @@
+version: '3.7'
+
+services:
+  swift-server:
+    build: swift
+    ports:
+      - "4000:4000"
+    depends_on:
+      - redis
+    environment:
+      REDIS_HOSTNAME: redis
+    restart: always
+  node-server:
+    build: node
+    ports:
+      - "3000:3000"
+    depends_on:
+      - redis
+    environment:
+      REDIS_HOSTNAME: redis
+    restart: always
+  redis:
+    image: "redis:5"
+    restart: always
+    ports:
+      - "6379:6379"
